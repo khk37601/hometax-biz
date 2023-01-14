@@ -8,12 +8,7 @@ from environment import EnvironmentManager
 
 def send_mail(
         data: Dict,
-        _to: List = [
-            'khk37601@martroo.com',
-            'wkddnjs910@martroo.com',
-            'ey9293@martroo.com',
-            'byhan@martroo.com',
-        ]) -> None:
+        _to: List = []) -> None:
     config: Dict[str, str] = EnvironmentManager()
     with smtplib.SMTP(config.get('EMAIL_SERVER'), 587) as session:
         session.starttls()
